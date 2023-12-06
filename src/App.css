@@ -6,6 +6,13 @@
   align-items: center;
 }
 
+.App {
+  display: flex;
+  min-width: 100vw;
+  height: 100vh;
+  overflow-x: auto;
+}
+
 .loading-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,28 +43,8 @@
 /* home */
 #story-teller-home {
   display: grid;
-  grid-template-columns: 100px auto;
-  gap: 0px;
-}
-
-.navbar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-}
-
-.navbar.bg-dark {
-  border-right: 1px solid #1e293b;
-}
-
-.navbar.bg-light {
-  border-right: 1px solid #e2e8f0;
-}
-
-.main-content {
-  padding-left: 10px;
-  height: 100vh;
+  grid-template-columns: 100px calc(100vw - 200px) 100px;
+  width: 100vw;
 }
 
 .bg-dark {
@@ -69,7 +56,72 @@
   background-color: var(--background-light);
   color: var(--text-dark);
 }
-/* fontawesome icon */
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  border-right: 1px solid #e2e8f0;
+}
+
+.bg-dark .navbar {
+  border-right: 1px solid #1e293b;
+}
+
+.main-content {
+  position: relative;
+  padding-left: 10px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sub-main {
+  width: 100%;
+}
+
+.heading {
+  margin: auto 100px;
+  font-size: 80px;
+}
+
+.scroll-right {
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  font-weight: bolder;
+  font-size: large;
+  width: 100px;
+  height: 100px;
+  background-color: #64748b;
+  color: var(--text-light);
+  animation: blink 1s ease-in-out infinite;
+  transition: all 1s ease-in-out;
+}
+
+@keyframes blink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.scroll-right:hover {
+  background-color: #1e293b;
+}
 
 .fa-solid {
   font-size: 40px;
@@ -84,7 +136,23 @@
   color: #e2e8f0;
 }
 
-/* uibix logo */
+.fa-bars {
+  font-size: 30px;
+}
+
 .uibix-logo {
   border-radius: 100%;
+}
+
+.svg-curve {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  box-sizing: content-box;
+}
+
+.svg-curve img {
+  transform: rotate(-90deg);
+  width: 100vh;
+  height: auto;
 }

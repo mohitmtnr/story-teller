@@ -1,9 +1,10 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { Suspense, lazy, useCallback, useState } from "react";
+import AboutUs from "./components/aboutUs";
 const Home = lazy(() => import("./components/home"));
 function App() {
-  const [isDark, setDark] = useState(false);
+  const [isDark, setDark] = useState(true);
   const toggleDarkMode = useCallback(() => {
     setDark((prev) => !prev);
   }, []);
@@ -19,6 +20,7 @@ function App() {
     >
       <div className="App">
         <Home toggleDarkMode={toggleDarkMode} isDark={isDark} />
+        <AboutUs toggleDarkMode={toggleDarkMode} isDark={isDark} />
       </div>
     </Suspense>
   );
