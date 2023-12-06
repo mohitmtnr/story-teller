@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import { Suspense, lazy, useCallback, useState } from "react";
+const Home = lazy(() => import("./components/home"));
 function App() {
+  const [isDark, setDark] = useState(false);
+  const toggleDarkMode = useCallback(() => {
+    setDark((prev) => !prev);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense
+      fallback={
+        <header className="loading">
+          <img src={logo} className="loading-logo" alt="logo" />
+          <p>Loading...</p>
+        </header>
+      }
+    >
+      <div className="App">
+        <Home toggleDarkMode={toggleDarkMode} isDark={isDark} />
+      </div>
+    </Suspense>
   );
 }
 
