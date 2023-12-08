@@ -2,7 +2,7 @@ import React from "react";
 
 const Wave = ({ component }) => {
   return (
-    <div style={{ transform: "rotate(-90deg)" }}>
+    <div style={{ transform: "rotate(-90deg)", padding: "0", display: "flex" }}>
       <svg
         id="wave"
         style={{
