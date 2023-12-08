@@ -41,12 +41,6 @@
 }
 
 /* home */
-#story-teller-home {
-  display: grid;
-  grid-template-columns: 100px calc(100vw - 200px) 100px;
-  width: 100vw;
-}
-
 .bg-dark {
   background-color: var(--background-dark);
   color: var(--text-light);
@@ -57,22 +51,34 @@
   color: var(--text-dark);
 }
 
+#story-teller-home {
+  margin-left: 100px;
+  display: grid;
+  grid-template-columns: calc(100vw - 215px) 115px;
+}
+
 .navbar {
+  position: fixed;
+  width: 100px;
+  left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   height: 100vh;
   border-right: 1px solid #e2e8f0;
+  z-index: 100;
+  background-color: var(--background-light);
 }
 
 .bg-dark .navbar {
   border-right: 1px solid #1e293b;
+  background-color: var(--background-dark);
 }
 
 .main-content {
   position: relative;
-  padding-left: 10px;
+  padding-left: 100px;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -103,24 +109,23 @@
   height: 100px;
   background-color: #64748b;
   color: var(--text-light);
-  animation: blink 1s ease-in-out infinite;
+  animation: blink 2s ease-in-out infinite;
   transition: all 1s ease-in-out;
 }
 
 @keyframes blink {
   0% {
     transform: scale(1);
+    background-color: #64748b;
   }
   50% {
-    transform: scale(0.9);
+    transform: scale(0.95);
+    background-color: #1e293b;
   }
   100% {
     transform: scale(1);
+    background-color: #64748b;
   }
-}
-
-.scroll-right:hover {
-  background-color: #1e293b;
 }
 
 .fa-solid {
@@ -147,6 +152,7 @@
 .svg-curve {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 100vh;
   box-sizing: content-box;
 }
@@ -155,4 +161,39 @@
   transform: rotate(-90deg);
   width: 100vh;
   height: auto;
+}
+
+/* About Us */
+
+#story-teller-about-us,
+#story-teller-services {
+  display: grid;
+  grid-template-columns: 100px calc(100vw - 315px) 115px;
+  margin-left: 100px;
+}
+
+#story-teller-about-us h1,
+#story-teller-services h1 {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  writing-mode: vertical-lr;
+  transform: scale(-1);
+}
+
+#story-teller-about-us h1::before,
+#story-teller-about-us h1::after {
+  content: "Who we are?";
+  text-align: center;
+  font-size: 24px;
+  color: #94a3b8;
+}
+
+#story-teller-services h1::before,
+#story-teller-services h1::after {
+  content: "What we offer?";
+  text-align: center;
+  font-size: 24px;
+  color: #94a3b8;
 }
