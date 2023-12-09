@@ -266,10 +266,19 @@
   #canva {
     transform: translateY(-100vh);
   }
+  #canva-tool-container {
+    flex-direction: column;
+    top: 45%;
+    left: 0;
+  }
+  .canva-tool:hover {
+    transform: translateX(5px);
+  }
+
   #navbar {
     flex-direction: row;
     justify-content: space-between;
-    height: 100px;
+    height: 60px;
     width: 100vw;
   }
   #navbar .fa-toggle-off,
@@ -299,8 +308,8 @@
 
   .heading {
     text-align: center;
-    margin: auto;
-    font-size: xx-large;
+    margin: 80px;
+    font-size: large;
   }
 
   .svg-curve {
@@ -319,16 +328,51 @@
 
   #story-teller-about-us,
   #story-teller-services {
-    grid-template-columns: auto;
+    grid-template-columns: none;
+    padding-top: 50px;
     grid-template-rows: 100px calc(100vh - 315px) 115px;
   }
 
-  #canva-tool-container {
-    flex-direction: column;
-    top: 50%;
-    left: 0;
+  #main-content-services,
+  #main-content-about-us {
+    padding: 50px;
+    justify-content: start;
+    align-items: start;
   }
-  .canva-tool:hover {
-    transform: translateX(5px);
+
+  #main-content-about-us p,
+  #main-content-services p {
+    font-size: medium;
+    padding: 0px;
+  }
+
+  #main-content-about-us p,
+  #main-content-services p {
+    font-size: medium;
+    padding: 0px;
+  }
+
+  #story-teller-about-us h1,
+  #story-teller-services h1 {
+    writing-mode: horizontal-tb;
+    transform: scale(1);
+    font-size: large;
+  }
+
+  #story-teller-about-us h1::before,
+  #story-teller-about-us h1::after {
+    font-size: small;
+  }
+
+  #story-teller-services h1::before,
+  #story-teller-services h1::after {
+    font-size: small;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #main-content-services,
+  #main-content-about-us {
+    padding: 10px;
   }
 }
