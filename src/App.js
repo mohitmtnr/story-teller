@@ -1,5 +1,4 @@
 import "./App.css";
-import { useState } from "react";
 import AboutUs from "./components/aboutUs";
 import Services from "./components/services";
 import { useTheme } from "./context/theme";
