@@ -47,6 +47,7 @@ const Canva = () => {
         setPenColor={setPenColor}
       />
       <div
+        id="canva"
         style={{
           position: "fixed",
           zIndex: "1",

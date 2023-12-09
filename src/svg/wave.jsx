@@ -10,13 +10,9 @@ const Wave = ({ component }) => {
   };
 
   return (
-    <div style={{ transform: "rotate(-90deg)", padding: "0", display: "flex" }}>
+    <div id="wave-container">
       <svg
         id="wave"
-        style={{
-          transition: "0.3s",
-          width: "100vh",
-        }}
         viewBox="0 0 1440 250"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"

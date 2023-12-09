@@ -29,7 +29,7 @@
   grid-template-columns: calc(100vw - 215px) 115px;
 }
 
-.navbar {
+#navbar {
   position: fixed;
   width: 100px;
   left: 0;
@@ -43,8 +43,13 @@
   backdrop-filter: blur(50px);
 }
 
-.bg-dark .navbar {
+.bg-dark #navbar {
   border-right: 1px solid #1e293b;
+}
+
+#navbar a,
+#navbar i {
+  margin: auto 25px;
 }
 
 .main-content {
@@ -130,10 +135,15 @@
   box-sizing: content-box;
 }
 
-.svg-curve img {
+#wave-container {
   transform: rotate(-90deg);
+  padding: 0;
+  display: flex;
+}
+
+#wave {
+  transition: 0.2s;
   width: 100vh;
-  height: auto;
 }
 
 /* About Us */
@@ -201,6 +211,10 @@
 }
 
 /* canva */
+#canva {
+  transform: translateY(-100vh);
+}
+
 #canva-tool-container {
   position: fixed;
   display: flex;
@@ -208,7 +222,6 @@
   align-items: center;
   top: 0;
   left: 50%;
-  margin-top: 10px;
   z-index: 50;
 }
 .canva-tool {
@@ -220,7 +233,7 @@
   width: 50px;
   border-radius: 100%;
   transition: all ease-in-out 300ms;
-  margin-right: 10px;
+  margin: 10px 10px;
 }
 
 .canva-tool i {
@@ -245,4 +258,77 @@
 
 .canva-tool:hover {
   transform: translateY(5px);
+}
+
+/* mobile and tablet responsiveness */
+
+@media only screen and (max-width: 1000px) {
+  #canva {
+    transform: translateY(-100vh);
+  }
+  #navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+    width: 100vw;
+  }
+  #navbar .fa-toggle-off,
+  #navbar .fa-toggle-on {
+    display: none;
+  }
+
+  #story-teller-home {
+    margin-left: 0px;
+    width: 100vw;
+    grid-template-columns: auto;
+    grid-template-rows: calc(100vh - 115px) 115px;
+  }
+
+  .main-content {
+    width: 100vw;
+    position: relative;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* .sub-main {
+    height: 100vh;
+  } */
+
+  .heading {
+    text-align: center;
+    margin: auto;
+    font-size: xx-large;
+  }
+
+  .svg-curve {
+    height: 100px;
+    width: 100vw;
+  }
+
+  #wave {
+    width: 100vw;
+  }
+
+  #wave-container {
+    transform: rotate(0deg);
+    justify-content: flex-end;
+  }
+
+  #story-teller-about-us,
+  #story-teller-services {
+    grid-template-columns: auto;
+    grid-template-rows: 100px calc(100vh - 315px) 115px;
+  }
+
+  #canva-tool-container {
+    flex-direction: column;
+    top: 50%;
+    left: 0;
+  }
+  .canva-tool:hover {
+    transform: translateX(5px);
+  }
 }

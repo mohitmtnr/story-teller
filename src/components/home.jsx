@@ -7,7 +7,7 @@ const Home = () => {
   const { isDark, toggleDarkMode, activeColor } = useTheme();
   return (
     <>
-      <nav className="navbar">
+      <nav id="navbar">
         <a href="/">
           <img
             src={uibixLogo}
