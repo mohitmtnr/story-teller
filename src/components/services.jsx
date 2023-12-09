@@ -11,8 +11,10 @@ const Services = () => {
     >
       <h1>WHAT WE OFFER?</h1>
       <div id="main-content-services">
-        <i className="fa-solid fa-toolbox service-icon"></i>
-        <h2>Services</h2>
+        <h2>
+          <i className="fa-solid fa-toolbox service-icon"></i>
+          Services
+        </h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio esse
           recusandae saepe eius necessitatibus. Vitae, similique neque eaque

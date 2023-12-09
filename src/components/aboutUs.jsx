@@ -11,8 +11,10 @@ const AboutUs = () => {
     >
       <h1>WHO WE ARE?</h1>
       <div id="main-content-about-us">
-        <i className="fa-solid fa-passport about-icon"></i>
-        <h2>About us</h2>
+        <h2>
+          <i className="fa-solid fa-passport about-icon"></i>
+          About us
+        </h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio esse
           recusandae saepe eius necessitatibus. Vitae, similique neque eaque

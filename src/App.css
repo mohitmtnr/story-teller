@@ -142,6 +142,7 @@
 }
 
 #wave {
+  display: flex;
   transition: 0.2s;
   width: 100vh;
 }
@@ -192,16 +193,13 @@
 
 .service-icon,
 .about-icon {
-  padding: 25px;
-  box-shadow: 0 0 2px 2px #808a9f1c;
-  border-radius: 100%;
+  padding: 0px 25px;
   align-self: flex-start;
 }
 
 #main-content-about-us h2,
 #main-content-services h2 {
   align-self: flex-start;
-  margin-top: 5px;
 }
 
 #main-content-about-us p,
@@ -290,7 +288,7 @@
     margin-left: 0px;
     width: 100vw;
     grid-template-columns: auto;
-    grid-template-rows: calc(100vh - 115px) 115px;
+    grid-template-rows: calc(100vh - 100px);
   }
 
   .main-content {
@@ -302,10 +300,6 @@
     align-items: center;
   }
 
-  /* .sub-main {
-    height: 100vh;
-  } */
-
   .heading {
     text-align: center;
     margin: 80px;
@@ -315,6 +309,8 @@
   .svg-curve {
     height: 100px;
     width: 100vw;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 
   #wave {
@@ -330,7 +326,7 @@
   #story-teller-services {
     grid-template-columns: none;
     padding-top: 50px;
-    grid-template-rows: 100px calc(100vh - 315px) 115px;
+    grid-template-rows: 100px calc(100vh - 250px);
   }
 
   #main-content-services,
@@ -362,6 +358,11 @@
   #story-teller-services h1::after {
     font-size: small;
   }
+
+  .next {
+    bottom: 50%;
+    top: 50%;
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -373,5 +374,10 @@
   #main-content-about-us p,
   #main-content-services p {
     text-align: center;
+  }
+
+  #main-content-about-us h2,
+  #main-content-services h2 {
+    align-self: center;
   }
 }
