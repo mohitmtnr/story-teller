@@ -1,8 +1,10 @@
 import React from "react";
 import uibixLogo from "../logo/uibix-logo.png";
 import Wave from "../svg/wave";
+import { useTheme } from "../context/theme";
 
-const Home = ({ toggleDarkMode, isDark }) => {
+const Home = () => {
+  const { isDark, toggleDarkMode, activeColor } = useTheme();
   return (
     <>
       <nav className="navbar">
@@ -26,13 +28,18 @@ const Home = ({ toggleDarkMode, isDark }) => {
         )}
       </nav>
       <div id="story-teller-home">
-        <section className="main-content">
+        <section className="main-content animate__animated animate__zoomIn">
           <div className="sub-main">
-            <h1 className="heading">
+            <h1 className="heading animate__animated animate__bounceInDown">
               We build fun experiences using cutting edge technologies
             </h1>
           </div>
-          <span className="scroll-right">Scroll &#8594;</span>
+          <a href="#story-teller-about-us" className="next">
+            <i
+              className="fa-solid fa-circle-chevron-right"
+              style={{ color: activeColor.home }}
+            ></i>
+          </a>
         </section>
         <div className="svg-curve">
           <Wave component="home" />

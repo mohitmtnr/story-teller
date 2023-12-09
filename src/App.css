@@ -6,8 +6,8 @@
 }
 
 :root {
-  --background-dark: #0f172a;
-  --background-light: #f8fafc;
+  --background-dark: #020617;
+  --background-light: #ffffff;
   --text-light: var(--background-light);
   --text-dark: var(--background-dark);
 }
@@ -40,12 +40,11 @@
   height: 100vh;
   border-right: 1px solid #e2e8f0;
   z-index: 100;
-  background-color: var(--background-light);
+  backdrop-filter: blur(50px);
 }
 
 .bg-dark .navbar {
   border-right: 1px solid #1e293b;
-  background-color: var(--background-dark);
 }
 
 .main-content {
@@ -72,23 +71,22 @@
   -webkit-text-fill-color: transparent;
 }
 
-.scroll-right {
+.next {
   position: absolute;
-  bottom: 100px;
-  right: 100px;
-  display: flex;
-  cursor: pointer;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100%;
-  font-weight: bolder;
-  font-size: large;
-  width: 100px;
-  height: 100px;
-  background-color: #2a385c;
-  color: var(--text-light);
+  top: 50%;
+  right: 25px;
   animation: blink 2s ease-in-out infinite;
-  transition: all 1s ease-in-out;
+}
+.next i {
+  background-color: white;
+  padding: 0;
+  border-radius: 100%;
+  border: 2px solid white;
+  transition: all ease-in-out 300ms;
+}
+
+.next :hover {
+  transform: translateX(5px);
 }
 
 @keyframes blink {
@@ -96,7 +94,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(0.95);
+    transform: scale(0.9);
   }
   100% {
     transform: scale(1);
@@ -158,22 +156,23 @@
 
 #story-teller-about-us h1::before,
 #story-teller-about-us h1::after {
+  font-weight: lighter;
   content: "Who we are?";
   text-align: center;
   font-size: 24px;
-  color: #94a3b8;
 }
 
 #story-teller-services h1::before,
 #story-teller-services h1::after {
+  font-weight: lighter;
   content: "What we offer?";
   text-align: center;
   font-size: 24px;
-  color: #94a3b8;
 }
 
-.main-content-services,
-.main-content-about-us {
+#main-content-services,
+#main-content-about-us {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -186,18 +185,64 @@
   padding: 25px;
   box-shadow: 0 0 2px 2px #808a9f1c;
   border-radius: 100%;
+  align-self: flex-start;
+}
+
+#main-content-about-us h2,
+#main-content-services h2 {
+  align-self: flex-start;
+  margin-top: 5px;
+}
+
+#main-content-about-us p,
+#main-content-services p {
+  font-size: 20px;
+  padding-right: 100px;
+}
+
+/* canva */
+#canva-tool-container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 50%;
+  margin-top: 10px;
+  z-index: 50;
+}
+.canva-tool {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  transition: all ease-in-out 300ms;
   margin-right: 10px;
 }
 
-.main-content-about-us h2,
-.main-content-services h2 {
-  align-self: flex-start;
-  text-decoration: underline;
+.canva-tool i {
+  font-size: medium;
+  background-color: #00000011;
 }
 
-.main-content-about-us p,
-.main-content-services p {
-  font-size: 20px;
-  padding-right: 100px;
-  color: #64748b;
+.canva-tool input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  margin-top: 25px;
+}
+
+.canva-tool label {
+  position: relative;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.canva-tool:hover {
+  transform: translateY(5px);
 }

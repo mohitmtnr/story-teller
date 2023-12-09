@@ -1,21 +1,21 @@
 import "./App.css";
-import { lazy, useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 import AboutUs from "./components/aboutUs";
 import Services from "./components/services";
-const Home = lazy(() => import("./components/home"));
+import { useTheme } from "./context/theme";
+import Home from "./components/home";
+import Canva from "./canva/canva";
 function App() {
-  const [isDark, setDark] = useState(true);
   const [scroll, setScroll] = useState(200);
-  const toggleDarkMode = useCallback(() => {
-    setDark((prev) => !prev);
-  }, []);
+  const { isDark } = useTheme();
 
   return (
     <div
       id="scroll-container"
       className={`App ${isDark ? "bg-dark" : "bg-light"}`}
     >
-      <Home toggleDarkMode={toggleDarkMode} isDark={isDark} />
+      <Canva />
+      <Home />
       <AboutUs />
       <Services />
     </div>
