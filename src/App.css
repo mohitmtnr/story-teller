@@ -358,11 +358,6 @@
   #story-teller-services h1::after {
     font-size: small;
   }
-
-  .next {
-    bottom: 50%;
-    top: 50%;
-  }
 }
 
 @media only screen and (max-width: 400px) {

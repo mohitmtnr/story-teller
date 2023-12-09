@@ -24,12 +24,6 @@ const AboutUs = () => {
           in assumenda cupiditate expedita odio molestiae cum eligendi explicabo
           illum possimus magni. Eos, a delectus.
         </p>
-        <a href="#story-teller-services" className="next">
-          <i
-            className="fa-solid fa-circle-chevron-right"
-            style={{ color: activeColor.about }}
-          ></i>
-        </a>
       </div>
       <div className="svg-curve">
         <Wave component="aboutUs" />
