@@ -309,7 +309,7 @@
   .heading {
     text-align: center;
     margin: 80px;
-    font-size: large;
+    font-size: xx-large;
   }
 
   .svg-curve {
@@ -346,12 +346,6 @@
     padding: 0px;
   }
 
-  #main-content-about-us p,
-  #main-content-services p {
-    font-size: medium;
-    padding: 0px;
-  }
-
   #story-teller-about-us h1,
   #story-teller-services h1 {
     writing-mode: horizontal-tb;
@@ -373,6 +367,11 @@
 @media only screen and (max-width: 400px) {
   #main-content-services,
   #main-content-about-us {
-    padding: 10px;
+    padding: 25px;
+  }
+
+  #main-content-about-us p,
+  #main-content-services p {
+    text-align: center;
   }
 }
