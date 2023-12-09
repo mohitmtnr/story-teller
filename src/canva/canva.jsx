@@ -50,7 +50,7 @@ const Canva = () => {
         id="canva"
         style={{
           position: "fixed",
-          zIndex: "1000",
+          zIndex: "1",
           backgroundColor: "#00000011",
           transition: "all ease-in-out 300ms",
           transform: isPenActive ? "translateY(0)" : "translateY(-100vh)",
