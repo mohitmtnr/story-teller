@@ -31,7 +31,7 @@ const Canva = () => {
     setLines(lines.concat());
   };
 
-  const handleMouseUp = () => {
+  const handleMouseUp = (e) => {
     isDrawing.current = false;
     timoutId = setTimeout(() => {
       setPenActive(false);
@@ -50,7 +50,7 @@ const Canva = () => {
         id="canva"
         style={{
           position: "fixed",
-          zIndex: "1",
+          zIndex: "1000",
           backgroundColor: "#00000011",
           transition: "all ease-in-out 300ms",
           transform: isPenActive ? "translateY(0)" : "translateY(-100vh)",
@@ -62,9 +62,9 @@ const Canva = () => {
           onMouseDown={handleMouseDown}
           onMousemove={handleMouseMove}
           onMouseup={handleMouseUp}
-          onTouchStart={handleMouseDown}
-          onTouchMove={handleMouseMove}
-          onTouchEnd={handleMouseUp}
+          //   onTouchStart={handleMouseDown}
+          //   onTouchMove={handleMouseMove}
+          //   onTouchEnd={handleMouseUp}
         >
           <Layer>
             {lines.map((line, i) => (
