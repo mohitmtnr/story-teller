@@ -6,7 +6,7 @@ import { useTheme } from "./context/theme";
 import Home from "./components/home";
 import Canva from "./canva/canva";
 function App() {
-  const [scroll, setScroll] = useState(200);
+  // const [scroll, setScroll] = useState(200);
   const { isDark } = useTheme();
 
   return (
