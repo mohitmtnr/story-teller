@@ -52,6 +52,14 @@
   margin: auto 25px;
 }
 
+#navbar a:first-child {
+  overflow: hidden;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  border: 2px solid #020617;
+}
+
 .main-content {
   position: relative;
   padding-left: 100px;
@@ -123,8 +131,10 @@
   font-size: 30px;
 }
 
-.uibix-logo {
+.logo {
   border-radius: 100%;
+  cursor: pointer;
+  scale: 1.5;
 }
 
 .svg-curve {
@@ -189,6 +199,7 @@
   justify-content: center;
   align-items: center;
   padding-left: 100px;
+  transition: all ease-in-out 300ms;
 }
 
 .service-icon,
@@ -209,10 +220,6 @@
 }
 
 /* canva */
-#canva {
-  transform: translateY(-100vh);
-}
-
 #canva-tool-container {
   position: fixed;
   display: flex;
@@ -236,7 +243,7 @@
 
 .canva-tool i {
   font-size: medium;
-  background-color: #00000011;
+  background-color: #00000000;
 }
 
 .canva-tool input {
@@ -247,6 +254,9 @@
 }
 
 .canva-tool label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   cursor: pointer;
   width: 50px;

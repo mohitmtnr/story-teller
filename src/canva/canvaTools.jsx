@@ -1,8 +1,6 @@
 import React from "react";
-import { useTheme } from "../context/theme";
 
-const CanvaTools = ({ isPenActive, setPenActive, penColor, setPenColor }) => {
-  const { isDark } = useTheme();
+const CanvaTools = ({ penColor, setPenColor }) => {
   const handleOnColorChange = (e) => {
     setPenColor(e.target.value);
   };
@@ -12,23 +10,9 @@ const CanvaTools = ({ isPenActive, setPenActive, penColor, setPenColor }) => {
       <span
         className="canva-tool"
         style={{
-          backgroundColor: isPenActive
-            ? penColor
-            : isDark
-            ? "#ffffff"
-            : "#020617",
+          backgroundColor: penColor,
         }}
-        onClick={() => setPenActive((prev) => !prev)}
       >
-        <i
-          className="fa-solid fa-pen"
-          style={{
-            color: isPenActive ? "white" : isDark ? "#020617" : "#ffffff",
-            backgroundColor: "inherit",
-          }}
-        ></i>
-      </span>
-      <span className="canva-tool">
         <label
           title="change color"
           htmlFor="color-palette"
@@ -42,6 +26,13 @@ const CanvaTools = ({ isPenActive, setPenActive, penColor, setPenColor }) => {
             onChange={handleOnColorChange}
             value={penColor}
           />
+          <i
+            className="fa-solid fa-pen"
+            style={{
+              color: "white",
+              backgroundColor: "inherit",
+            }}
+          ></i>
         </label>
       </span>
     </div>

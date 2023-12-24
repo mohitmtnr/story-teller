@@ -5,7 +5,6 @@ let timoutId;
 const Canva = () => {
   const [lines, setLines] = useState([]);
   const isDrawing = useRef(false);
-  const [isPenActive, setPenActive] = useState(false);
   const [penColor, setPenColor] = useState("#ca8a04");
 
   const handleMouseDown = (e) => {
@@ -34,26 +33,19 @@ const Canva = () => {
   const handleMouseUp = (e) => {
     isDrawing.current = false;
     timoutId = setTimeout(() => {
-      setPenActive(false);
       setLines([]);
     }, 3000);
   };
+
   return (
     <>
-      <CanvaTools
-        isPenActive={isPenActive}
-        setPenActive={setPenActive}
-        penColor={penColor}
-        setPenColor={setPenColor}
-      />
+      <CanvaTools penColor={penColor} setPenColor={setPenColor} />
       <div
         id="canva"
         style={{
           position: "fixed",
           zIndex: "1",
-          backgroundColor: "#00000011",
-          transition: "all ease-in-out 300ms",
-          transform: isPenActive ? "translateY(0)" : "translateY(-100vh)",
+          backgroundColor: "transparent",
         }}
       >
         <Stage

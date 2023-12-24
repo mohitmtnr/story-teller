@@ -7,6 +7,7 @@ const AboutUs = () => {
   return (
     <div
       id="story-teller-about-us"
+      className="animate_animated"
       style={{ backgroundColor: activeColor.home }}
     >
       <h1>WHO WE ARE?</h1>

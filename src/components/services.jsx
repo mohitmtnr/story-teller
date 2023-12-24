@@ -10,7 +10,7 @@ const Services = () => {
       style={{ backgroundColor: activeColor.about }}
     >
       <h1>WHAT WE OFFER?</h1>
-      <div id="main-content-services">
+      <div id="main-content-services" className="animate_animated">
         <h2>
           <i className="fa-solid fa-toolbox service-icon"></i>
           Services

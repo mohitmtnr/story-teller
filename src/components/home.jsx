@@ -1,5 +1,5 @@
 import React from "react";
-import uibixLogo from "../logo/uibix-logo.png";
+import logo from "../logo/logo.webp";
 import Wave from "../svg/wave";
 import { useTheme } from "../context/theme";
 
@@ -9,14 +9,7 @@ const Home = () => {
     <>
       <nav id="navbar">
         <a href="/">
-          <img
-            src={uibixLogo}
-            alt="uibix-logo"
-            height={50}
-            width={50}
-            style={{ cursor: "pointer" }}
-            className="uibix-logo"
-          />
+          <img src={logo} alt="logo" height={50} width={50} className="logo" />
         </a>
 
         <i className="fa-solid fa-bars"></i>
